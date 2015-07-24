@@ -468,7 +468,7 @@ Similarly the rules were implemented for 92 tags adapting from standards set by 
 
 \subsection{Choosing A Palette}
 
-According to Whoever \cite{Whoever}, the palette in a block language is important to discovery and self-directed learning, because students can try new commands without having to read documentation. Having a palette that contains useful and rewarding tags in an HTML mode is therefore important. The WHATWG HTML specifications define over 100 tags, however, most of which are not used. A number of developers online have informally posted HTML cheat sheets with the "most important tags," \cite{Webmonkey} \cite{SimpleGuide} \cite{Usabilla} but these are subjective and often conflict with each other. Because Droplet's philosophy is to be able to interact with real-world code on the Internet, we here determine and recommend a palette based on real-world tag frequencies.
+According to Whoever \cite{Whoever}, the palette in a block language is important to discovery and self-directed learning, because students can try new commands without having to read documentation. Having a palette that contains useful and rewarding tags in an HTML mode is therefore important. The WHATWG HTML specifications define over 100 tags, however, most of which are not used. A number of developers online have informally posted HTML cheat sheets with the "most important tags," \cite{Webmonkey} \cite{SimpleGuide} \cite{Usabilla} but these are subjective and often conflict with each other. Because Droplet's philosophy is to be able to interact with real-world code on the Internet, we here determine and recommend a palette based on real-world tag frequencies. As far as we know, there are no published statistics on the real-world frequency of HTML tag usage on the web.  So we crawled a selection of 52460 webpages and created real-world frequency data. We analyzed the data and plotted the top 15 tags in graphs. Figures \ref{TagsTotal} and \ref{TagsPerDocument}
 
 \begin{figure*}
 \centering
@@ -501,6 +501,9 @@ The final palette \cite{pencilcodehtml} was created by choosing top 40 tags from
 \subsection{Palette with alternate blocks}
 As of now, the palette has some commonly used tags. This can be made better by including variations of tags based on commonly used attributes. An example can be inclusion of both, \textless script\textgreater \textless /script\textgreater block and \textless script src=`uri' \textgreater \textless/script\textgreater block. A detailed study was done of the commonly used attributes for every tag as can be found on GitHub \cite{FullResults}. The results lists down commonly used attribtutes for all the tags, again sampling randomly over real world HTML collected from commoncrawl.
 
+\subsection{Transparent content model}
+Some tags such as 'a', 'ins', 'del', 'map' are transparent elements. The content model of a transparent element is derived from the content model of its parent element. As of now the droppability implements FLOW\_CONTENT \cite{flowcontent} for transparent elements since WHATWG allows it as a fallback if there it not parent to inherit content model from \cite{whatwgtransparent}. It will be ideal to have a transparent content model.
+
 \begin{thebibliography}{1}
 
 \bibitem{Droplet}
@@ -532,23 +535,32 @@ As of now, the palette has some commonly used tags. This can be made better by i
 \bibitem{Usabilla}
   Usabilla. An HTML Cheat Sheet That Never Fails. http://blog.usabilla.com/an-html-cheat-sheet-that-never-fails/
 \bibitem{htmltutor1}
-  Exploring computer Science - pages 105-110\\ http://www.exploringcs.org/wp-content/uploads/2014/02/ExploringComputerScience-v5.0.pdf
+  Exploring computer Science - pages 105-110\\
+  http://www.exploringcs.org/wp-content/uploads/2014/02/ExploringComputerScience-v5.0.pdf
 \bibitem{htmltutor2}
-  W3Schools HTML starters guide http://www.w3schools.com/html/default.asp
+  W3Schools HTML starters guide\\
+  http://www.w3schools.com/html/default.asp
 \bibitem{htmltutor3}
   Htmldog beginner tutorial http://htmldog.com/guides/html/beginner/conclusion/
 \bibitem{flowcontent}
-  WHATWG flow content list https://developers.whatwg.org/content-models.html#flow-content
+  WHATWG flow content list\\
+  https://developers.whatwg.org/content-models.html\#flow-content
 \bibitem{metadata}
-  WHATWG metadata content list https://developers.whatwg.org/content-models.html#metadata-content
+  WHATWG metadata content list\\
+  https://developers.whatwg.org/content-models.html\#metadata-content
 \bibitem{phrasing}
-  WHATWG phrasing content list https://developers.whatwg.org/content-models.html#phrasing-content
+  WHATWG phrasing content list\\
+  https://developers.whatwg.org/content-models.html\#phrasing-content
 \bibitem{interactive}
-  WHATWG interactive content list https://developers.whatwg.org/content-models.html#interactive-content
+  WHATWG interactive content list\\
+  https://developers.whatwg.org/content-models.html\#interactive-content
 \bibitem{script}
-  WHATWG script supporting elements https://developers.whatwg.org/content-models.html#script-supporting-elements
+  WHATWG script supporting elements\\
+  https://developers.whatwg.org/content-models.html\#script-supporting-elements
+\bibitem{whatwgtransparent}
+  https://html.spec.whatwg.org/multipage/dom.html\#transparent-content-models
 
 \end{thebibliography}
-  
+
 % that's all folks
 \end{document}
