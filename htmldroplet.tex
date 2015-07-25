@@ -440,23 +440,23 @@ A Droplet language adapter has two roles: to parse text and insert block markup,
 \section{Process}
 
 \subsection{Adapting A Parser}
-One of the goals of an HTML mode in Droplet is to be able to visualize existing webpages from the Internet as blocks. This poses a difficulty because browsers are tolerant and many existing webpages are not standards-compliant or are syntactically incorrect. Droplet's HTML mode adapts the parse5 \cite{parse5} HTML parser, which tolerates syntactically incorrect HTML code in the same way browsers do. The parse5 parser was modified for Droplet's purposes to add more detailed location data. Here is how it works:
+One of the goals of an HTML mode in Droplet is to be able to visualize existing webpages from the Internet as blocks. This poses a difficulty because browsers are tolerant and many existing webpages are not standards-compliant or are syntactically incorrect. Droplet's HTML mode adapts the parse5 \cite{parse5} HTML parser, which tolerates syntactically incorrect HTML code in the same way browsers do. We modified the parse5 parser for Droplet's purposes to add more detailed location data. We broke the entire process into small sub-steps and following is it's sketch:
 \begin{enumerate}
   \item Parse the text into an Abstract Syntax Tree using parse5.
   \item Mark the root of the document.
   \item For each node, check if it is a text node, comment, empty tag or a compound tag.
   \item Mark the node based on its type
   \begin{itemize}
-  \item If it is a text node, make it editable.
-  \item If it is a comment node, make the comment editable.
-  \item If it is an empty tag, mark it as a block and make its attributes editable.
-  \item If is a compound tag, mark it as a block, make its attributes editable and add an indent for its children.
+    \item If it is a text node, make it editable.
+    \item If it is a comment node, make the comment editable.
+    \item If it is an empty tag, mark it as a block and make its attributes editable.
+    \item If is a compound tag, mark it as a block, make its attributes editable and add an indent to make space for its children.
   \end{itemize}
-  \item Is the node has children, recurse from step (3) for every child.
+  \item If the node has children, recurse from step (3) for every child.
 \end{enumerate}
 
 \subsection{Enforcing Droppability Rules}
-One major advantage of a block language, however, is that it can enforce creating only standards-compliant code. Droplet's HTML mode therefore enforces droppability rules adapted from the WHATWG HTML specifications \cite{WHATWG}. Here are the implemented rules for some tags about what is allowed immediately inside the tag\\
+One major advantage of a block language, however, is that it can enforce creating only standards-compliant code. Droplet's HTML mode therefore enforces droppability rules adapted from the WHATWG HTML specifications \cite{WHATWG}. Here are rules we implemented for some tags about what is allowed immediately inside the tag\\
 html - [head? (body\textbar frameset)?]\\
 head - [METADATA\_CONTENT*] \cite{metadata}\\
 title - ['text'?]\\
@@ -464,50 +464,46 @@ a - [(PHRASING\_CONTENT\textbar INTERACTIVE\_CONTENT)*] \cite{phrasing} \cite{in
 body - [FLOW\_CONTENT*] \cite{flowcontent}\\
 table - [(caption\textbar colgroup\textbar thead\textbar tfoot\textbar tbody\textbar tr\textbar \\ SCRIPT\_SUPPORTING)*] \cite{script}\\
 td - [FLOW\_CONTENT*] \cite{flowcontent}\\
-Similarly the rules were implemented for 92 tags adapting from standards set by WHATWG \cite{WHATWG}
+Similarly, we implemented the rules for 92 tags adapting from standards set by WHATWG \cite{WHATWG}
 
 \subsection{Choosing A Palette}
 
-According to Whoever \cite{Whoever}, the palette in a block language is important to discovery and self-directed learning, because students can try new commands without having to read documentation. Having a palette that contains useful and rewarding tags in an HTML mode is therefore important. The WHATWG HTML specifications define over 100 tags, however, most of which are not used. A number of developers online have informally posted HTML cheat sheets with the "most important tags," \cite{Webmonkey} \cite{SimpleGuide} \cite{Usabilla} but these are subjective and often conflict with each other. Because Droplet's philosophy is to be able to interact with real-world code on the Internet, we here determine and recommend a palette based on real-world tag frequencies. As far as we know, there are no published statistics on the real-world frequency of HTML tag usage on the web.  So we crawled a selection of 52460 webpages and created real-world frequency data. We analyzed the data and plotted the top 15 tags in graphs. Figures \ref{TagsTotal} and \ref{TagsPerDocument}
+According to Whoever \cite{Whoever}, the palette in a block language is important to discovery and self-directed learning, because students can try new commands without having to read documentation. Having a palette that contains useful and rewarding tags in an HTML mode is therefore important. The WHATWG HTML specifications define over 100 tags, however, most of which are not used. A number of developers online have informally posted HTML cheat sheets with the "most important tags," \cite{Webmonkey} \cite{SimpleGuide} \cite{Usabilla} but these are subjective and often conflict with each other. Because Droplet's philosophy is to be able to interact with real-world code on the Internet, we here determine and recommend a palette based on real-world tag frequencies. As far as we know, there are no published statistics on the real-world frequency of HTML tag usage on the web.  So we crawled a selection of 52460 webpages and created real-world frequency data \cite{FullResults}. We analyzed the data and plotted the top 108 tags in a graph. Figure \ref{Tagsgraph}
 
 \begin{figure*}
 \centering
-\includegraphics[width=6in]{Total.png}
-\caption{Counts Based On Tag Appearances}
+\includegraphics[width=7in]{taggraph3.png}
+\caption{HTML Tag Usage on the Web}
 \small
 \begin{flushleft}
-Y-axis - percentage occurance of the tag
+A total of 52640 pages were sampled from commoncrawl \cite{commoncrawl}\\
+Left Scale (red) - Avg. count of tags per document.\\
+Right Scale (blue) - Percentage of pages containing the tag.
 \end{flushleft}
-\label{TagsTotal}
+\label{Tagsgraph}
 \end{figure*}
 
 \begin{figure*}
 \centering
-\includegraphics[width=6in]{Perdoc.png}
-\caption{Counts Based on Documents With Tag}
-\small
-\begin{flushleft}
-Y-axis - percentage of documents having the tag
-\end{flushleft}
-\label{TagsPerDocument}
+\includegraphics[width=5in]{Palette.png}
+\caption{The final Palette}
+\label{paletteimage}
 \end{figure*}
 
-Figures \ref{TagsTotal} and \ref{TagsPerDocument} show an analysis of tag frequencies over random HTML datasets collected from commoncrawl \cite{commoncrawl} (data and full results are available on Github \cite{FullResults}.  Figure \ref{TagsTotal} represents a count of the number of times each tag was used at all in the crawled data sets. Figure \ref{TagsPerDocument} represents a count of the number of documents in the data sets that used the tag.
+Figure \ref{Tagsgraph} shows our analysis of tag frequencies over random HTML datasets collected from commoncrawl \cite{commoncrawl} (data and full results are available on Github \cite{FullResults}.  Red bars represent a count of the number of times each tag was used per page on average in the crawled data sets. Blue line represents the percentage of documents in the data sets that used the tag.
 
-The final palette \cite{pencilcodehtml} was created by choosing top 40 tags from the above 2 analysis results. Added to this were inputs from teachers and courses they like to start with to teach HTML, and some starter courses which children do themselves \cite{htmltutor1} \cite{htmltutor2} \cite{htmltutor3}. You may notice that the palette isn't exactly the top 40 tags but this is because starters need not learn all highly used tags, they start with tags which are easier to understand.
+We created he final palette \ref{paletteimage} whose full working version is published at Pencil Code \cite{pencilcodehtml}, by choosing the top 40 tags from the above 2 analysis results. Added to this were inputs from teachers and courses they like to start with, to teach HTML, and some starter courses which children do themselves \cite{htmltutor1} \cite{htmltutor2} \cite{htmltutor3}. You may notice that the palette isn't exactly the top 40 tags. We did this on purpose because starters need not learn all highly used tags, they start with tags which are easier to understand and have more expressive power compared to similarly used tags.
 
 \section{Future Prospects}
 
 \subsection{Palette with alternate blocks}
-As of now, the palette has some commonly used tags. This can be made better by including variations of tags based on commonly used attributes. An example can be inclusion of both, \textless script\textgreater \textless /script\textgreater block and \textless script src=`uri' \textgreater \textless/script\textgreater block. A detailed study was done of the commonly used attributes for every tag as can be found on GitHub \cite{FullResults}. The results lists down commonly used attribtutes for all the tags, again sampling randomly over real world HTML collected from commoncrawl.
+As of now, the palette has some commonly used tags. This can be made better by including variations of tags based on commonly used attributes. An example can be inclusion of both, \textless script\textgreater \textless /script\textgreater block and \textless script src=`uri' \textgreater \textless/script\textgreater block. We did a detailed study of the commonly used attributes for every tag as can be found on GitHub \cite{FullResults}. The results lists down commonly used attribtutes for all the tags, again sampling randomly over real world HTML collected from commoncrawl \cite{commoncrawl}.
 
 \subsection{Transparent content model}
-Some tags such as 'a', 'ins', 'del', 'map' are transparent elements. The content model of a transparent element is derived from the content model of its parent element. As of now the droppability implements FLOW\_CONTENT \cite{flowcontent} for transparent elements since WHATWG allows it as a fallback if there it not parent to inherit content model from \cite{whatwgtransparent}. It will be ideal to have a transparent content model.
+Some tags such as 'a', 'ins', 'del', 'map' are transparent elements. The content model of a transparent element is derived from the content model of its parent element. As of now the droppability implements FLOW\_CONTENT \cite{flowcontent} for transparent elements since WHATWG allows it as a fallback if there is no parent to inherit content model from \cite{whatwgtransparent}. It will be ideal to have a transparent content model.
 
 \begin{thebibliography}{1}
 
-\bibitem{Droplet}
-  Bau, D. A. Droplet, A Blocks-Based Editor for Text Code. Journal of Computer Science in Colleges. 30, 6 (June 2015).
 \bibitem{Budny}
   Budny, D.; Lund, L.; Vipperman, J.; Patzer, J.L.I.I.I., "Four steps to teaching C programming," Frontiers in Education, 2002. FIE 2002. 32nd Annual , vol.2, no., pp.F1G-18,F1G-22 vol.2, 2002
 \bibitem{Mahmoud}
@@ -518,6 +514,8 @@ Some tags such as 'a', 'ins', 'del', 'map' are transparent elements. The content
   Taylor, R. and Gitaski, C. Teaching WELL and loving IT. New Perspectives on CALL for Second Language Classrooms, 131-147.
 \bibitem{Scratch}
   Scratch. https://scratch.mit.edu/
+\bibitem{Droplet}
+  Bau, D. A. Droplet, A Blocks-Based Editor for Text Code. Journal of Computer Science in Colleges. 30, 6 (June 2015).
 \bibitem{parse5}
   Parse5. https://github.com/inikulin/parse5
 \bibitem{WHATWG}
