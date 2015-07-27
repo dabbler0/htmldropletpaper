@@ -342,18 +342,18 @@
 \author{
 \IEEEauthorblockN{Saksham Aggarwal}
 \IEEEauthorblockA{International Institue of Information Technology\\
-Hyderabad, 500032\\
-Email: saksham.aggarwal@students.iiit.ac.in}
+Hyderabad, India\\
+saksham.aggarwal@students.iiit.ac.in}
 \and
 \IEEEauthorblockN{David Anthony Bau}
 \IEEEauthorblockA{Phillips Exeter Academy\\
-Exeter, New Hampshire 03833\\
-Email: dbau@exeter.edu}
+Exeter, NH, USA\\
+dbau@exeter.edu}
 \and
 \IEEEauthorblockN{David Bau}
-\IEEEauthorblockA{Deatils about david\\
-go here\\
-Email: ...}
+\IEEEauthorblockA{Google\\
+Cambridge, MA, USA\\
+davidbau@google.com}
 }
 
 % conference papers do not typically use \thanks and this command
@@ -393,7 +393,7 @@ Email: ...}
 
 \begin{abstract}
 %\boldmath
-  Droplet is a new dual-mode editor that allows students to work in either blocks or text and switch between them any time. This paper presents work creating a Droplet mode for HTML code. We also discuss an analysis of real-world HTML tags and attributes and propose a palette based on this analysis.
+This paper presents a block-programming editor for HTML code.  The editor provides a block visualization of HTML syntax, allowing students to work in either blocks or text and switch freely.  Our editor was created as an extension of Droplet, a dual-mode programming block editing framework that was previously used for JavaScript and CoffeeScript. We describe the process of extending Droplet to apply to HTML. We also discuss an analysis of real-world HTML tags and attributes and propose a palette based on this analysis.
 
 \end{abstract}
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
@@ -425,6 +425,19 @@ Nonetheless, for first-time-coder, HTML can be difficult to learn.  In a worksho
 
 Therefore we are interested in finding an alternative to WYSIWYG HTML tools that expose the code, while still simplifying the process of learning to use HTML tags for the first time.  In recent years, block programming languages such as Scratch \cite{Scratch} have introduced many students to coding through a visual representation of commands and control flow.  Here we investigate whether a similar approach can be effective when used with HTML code.
 
+\section{Goals}
+
+Our HTML block editor was designed to address three principal
+educational goals.  Borrowing terminology from usability heuristics
+from Nielsen, our goals were to:
+
+\begin{itemize}
+\item Allow students to create HTML using \emph{recognition rather than recall}, assembling blocks to make pages.
+\item When students view and edit real-world webpages, \emph{the system must match the real world}.
+\item Students are given a \emph{minimalist design} with a clear, useful, realistic, yet minimal set of choices.
+\end{itemize}
+
+
 \section{Background}
 
 \subsection{Droplet's Text-First Approach to Blocks}
@@ -447,16 +460,26 @@ Droplet is a dual mode editor giving preference to text. The modes can be switch
 \label{dropletimage}
 \end{figure*}
 
-Droplet \cite{Droplet} is a dual-mode blocks and text editor that was built to bridge the gap between blocks and text. Droplet's primary guiding philosophy is that the text, not the blocks, are the primary data. Thus, Droplet programs begin and end their life as text. When Droplet opens a program file, the language adapter inserts markup indicating where blocks should go and how they should be rendered. The user interacts with this rendering of the program, performing splice operations on the markup stream. During editing, the language mode may be called back to preserve precedence or dictate droppability rules. At the end of the editing session, the markup is simply discarded and a raw text program is generated again. Figure \ref{lifecycle} shows a typical Droplet editing session in JavaScript and Figure \ref{dropletimage} shows the typical interface a droplet user experiences.
+We built our HTML editor as an extension of Droplet.  Droplet \cite{Droplet} is a dual-mode blocks and text editor that allows students to work with traditional text code syntax using either drag-and-drop blocks or by typing the text.  Students can switch modes at any time.
+
+Droplet's guiding philosophy is that the text, not the blocks, are the primary data. Thus, Droplet programs begin and end their life as text. When Droplet opens a program file, the language adapter inserts markup indicating where blocks should go and how they should be rendered. The user interacts with this rendering of the program, performing splice operations on the markup stream. During editing, the language mode may be called back to preserve precedence or dictate droppability rules. At the end of the editing session, the markup is simply discarded and a raw text program is generated again. Figure \ref{lifecycle} shows a typical Droplet editing session in JavaScript and Figure \ref{dropletimage} shows the typical interface a droplet user experiences.
 
 \subsection{Adding A New Language to Droplet}
 
-A Droplet language adapter has two roles: to parse text and insert block markup, and to enforce droppability rules between blocks and sockets. Usually, a Droplet language adapter uses a standard language parser -- for instance, Droplet's JavaScript mode uses acorn.js -- and inserts blocks using the location data from the generated AST. The parser annotates the generated blocks with information pertinent to droppability, and uses this information later during editing to determine whether a drop is legal.
+Droplet is designed to be extended to any text language by adding language adapters.
+
+A Droplet language adapter parses text to delinate blocks, and it also enforces rules that determine whether blocks are allowed to be dropped into specific sockets.  Typically the language parser relies on a standard language parser, inserting blocks based on positions of specific types of nodes in an AST.  Then the language adapter supports callbacks to determine drag-and-drop permissibility.
+
+New languages in Droplet also need a block palette.  The block palette in Droplet is a palette of choices: it is not a complete catalog of all possible blocks for a language, but a curated collection of useful document fragments.  Dropdown choices for sockets are similarly curated.  Users are always free to enter tags and attributes as free-form text, but a good palette design will allow common cases to be handled visually.
 
 \section{Process}
 
 \subsection{Adapting A Parser}
-One of the goals of an HTML mode in Droplet is to be able to visualize existing webpages from the Internet as blocks. This poses a difficulty because browsers are tolerant and many existing webpages are not standards-compliant or are syntactically incorrect. Droplet's HTML mode adapts the parse5 \cite{parse5} HTML parser, which tolerates syntactically incorrect HTML code in the same way browsers do. We modified the parse5 parser for Droplet's purposes to add more detailed location data. We broke the entire process into small sub-steps and following is it's sketch:
+One of the goals of our HTML editor is to be able to visualize existing webpages from the Internet as blocks. This poses a difficulty because browsers are tolerant and many existing webpages are not stricltly standards-compliant, with mismatched tags, missing, implicit, or redundant elements, and so on.
+
+Droplet's HTML mode adapts the parse5 \cite{parse5} HTML parser, which tolerates syntactically "incorrect" HTML code in the same way browsers do. We modified the parse5 parser for Droplet's purposes to add more detailed location data, so that precise text locations for tags and text can be extracted.
+
+The block parsing process for HTML proceeds as the following psuedocode:
 \begin{enumerate}
   \item Parse the text into an Abstract Syntax Tree using parse5.
   \item Mark the root of the document.
@@ -465,14 +488,15 @@ One of the goals of an HTML mode in Droplet is to be able to visualize existing 
   \begin{itemize}
     \item If it is a text node, make it editable.
     \item If it is a comment node, make the comment editable.
-    \item If it is an empty tag, mark it as a block and make its attributes editable.
-    \item If is a compound tag, mark it as a block, make its attributes editable and add an indent to make space for its children.
+    \item If it is an implicit element or error tag, do not mark it as a block.
+    \item If it is an empty element, mark it as a block and make its attributes editable.
+    \item If is an element with content, mark it as a block, make its attributes editable and add an indent to make space for its children.
   \end{itemize}
   \item If the node has children, recurse from step (3) for every child.
 \end{enumerate}
 
 \subsection{Enforcing Droppability Rules}
-One major advantage of a block language, however, is that it can enforce creating only standards-compliant code. Droplet's HTML mode therefore enforces droppability rules adapted from the WHATWG HTML specifications \cite{WHATWG}. Here are rules we implemented for some tags about what is allowed immediately inside the tag\\
+One major advantage of a block language is that it can enforce authoring so that students can create only standards-compliant code. Droplet's HTML mode therefore enforces droppability rules adapted from the WHATWG HTML specifications \cite{WHATWG}. Here are rules we implemented for some tags about what is allowed immediately inside the tag\\
 html - [head? (body\textbar frameset)?]\\
 head - [METADATA\_CONTENT*] \cite{metadata}\\
 title - ['text'?]\\
