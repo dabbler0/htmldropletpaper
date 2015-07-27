@@ -425,16 +425,12 @@ Nonetheless, for first-time-coder, HTML can be difficult to learn.  In a worksho
 
 Therefore we are interested in finding an alternative to WYSIWYG HTML tools that expose the code, while still simplifying the process of learning to use HTML tags for the first time.  In recent years, block programming languages such as Scratch \cite{Scratch} have introduced many students to coding through a visual representation of commands and control flow.  Here we investigate whether a similar approach can be effective when used with HTML code.
 
-\section{Goals}
-
-Our HTML block editor was designed to address three principal
-educational goals.  Borrowing terminology from usability heuristics
-from Nielsen, our goals were to:
+Borrowing terminology from Nielsen's usability heuristics\cite{Nielsen}, we are interested in meeting three goals simultaneously:
 
 \begin{itemize}
 \item Allow students to create HTML using \emph{recognition rather than recall}, assembling blocks to make pages.
-\item When students view and edit real-world webpages, \emph{the system must match the real world}.
-\item Students are given a \emph{minimalist design} with a clear, useful, realistic, yet minimal set of choices.
+\item Allow students to view an edit real-world wepages as either blocks or text: \emph{the system must match the real world}.
+\item Provide students with a \emph{minimalist design} with a clear, useful, realistic, yet minimal set of choices.
 \end{itemize}
 
 
@@ -442,27 +438,27 @@ from Nielsen, our goals were to:
 
 \subsection{Droplet's Text-First Approach to Blocks}
 
-\begin{figure*}
+\begin{figure}
 \centering
-\includegraphics[width=5in]{image11.jpg}
-\caption{Lifecycle of a Droplet Program}
-\label{lifecycle}
-\end{figure*}
-
-\begin{figure*}
-\centering
-\includegraphics[width=6in]{dualmode.png}
-\caption{Typical droplet interface for user}
+\includegraphics[width=\columnwidth]{dualmode.png}
+\caption{Our HTML Block editor user experience}
 \small
 \begin{flushleft}
 Droplet is a dual mode editor giving preference to text. The modes can be switched any time.
 \end{flushleft}
 \label{dropletimage}
-\end{figure*}
+\end{figure}
 
 We built our HTML editor as an extension of Droplet.  Droplet \cite{Droplet} is a dual-mode blocks and text editor that allows students to work with traditional text code syntax using either drag-and-drop blocks or by typing the text.  Students can switch modes at any time.
 
-Droplet's guiding philosophy is that the text, not the blocks, are the primary data. Thus, Droplet programs begin and end their life as text. When Droplet opens a program file, the language adapter inserts markup indicating where blocks should go and how they should be rendered. The user interacts with this rendering of the program, performing splice operations on the markup stream. During editing, the language mode may be called back to preserve precedence or dictate droppability rules. At the end of the editing session, the markup is simply discarded and a raw text program is generated again. Figure \ref{lifecycle} shows a typical Droplet editing session in JavaScript and Figure \ref{dropletimage} shows the typical interface a droplet user experiences.
+Droplet's guiding philosophy is that the text, not the blocks, are the primary data. Thus, Droplet programs begin and end their life as text. When Droplet opens a program file, the text is parsed into blocks, preserving the original text within block markup. Block editing operations performing splice operations on the text markup stream. At the end of the editing session, the markup is simply discarded and a raw text program is generated again. Figure \ref{lifecycle} shows a typical Droplet editing session in JavaScript and Figure \ref{dropletimage} shows a typical droplet user experience for our HTML editor.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.6\columnwidth]{droplet-arch.png}
+\caption{Lifecycle of a Droplet Editing Session}
+\label{lifecycle}
+\end{figure}
 
 \subsection{Adding A New Language to Droplet}
 
@@ -568,6 +564,8 @@ Some tags such as 'a', 'ins', 'del', 'map' are transparent elements. The content
   Taylor, R. and Gitaski, C. Teaching WELL and loving IT. New Perspectives on CALL for Second Language Classrooms, 131-147.
 \bibitem{Scratch}
   Scratch. https://scratch.mit.edu/
+\bibitem{Nielson}
+  Nielsen, Jakob. Usability engineering. Elsevier, 1994.
 \bibitem{Droplet}
   Bau, D. A. Droplet, A Blocks-Based Editor for Text Code. Journal of Computer Science in Colleges. 30, 6 (June 2015).
 \bibitem{parse5}
