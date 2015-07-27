@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.8)  27 JUL 2015 14:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.8)  27 JUL 2015 15:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -197,116 +197,105 @@ Underfull \vbox (badness 1112) has occurred while \output is active []
 
 
  <./images/dualmode.png> <./images/droplet-arch.png>]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 496.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 496.
 
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 496.
-
-
-LaTeX Warning: Citation `Whoever' on page 2 undefined on input line 507.
-
 <./images/taggraph3.png, id=14, 1239.63126pt x 808.01875pt>
 File: ./images/taggraph3.png Graphic file (type png)
 
 <use ./images/taggraph3.png>
-Package pdftex.def Info: ./images/taggraph3.png used on input line 511.
-(pdftex.def)             Requested size: 505.89pt x 329.74866pt.
+Package pdftex.def Info: ./images/taggraph3.png used on input line 508.
+(pdftex.def)             Requested size: 253.04987pt x 164.94214pt.
 
 <./images/Palette.png, id=15, 748.7975pt x 520.94624pt>
 File: ./images/Palette.png Graphic file (type png)
 
 <use ./images/Palette.png>
-Package pdftex.def Info: ./images/Palette.png used on input line 524.
-(pdftex.def)             Requested size: 361.34999pt x 251.39473pt.
+Package pdftex.def Info: ./images/Palette.png used on input line 521.
+(pdftex.def)             Requested size: 177.13412pt x 123.23317pt.
 
 <./images/attrgraph.png, id=16, 1136.245pt x 584.1825pt>
 File: ./images/attrgraph.png Graphic file (type png)
 
 <use ./images/attrgraph.png>
-Package pdftex.def Info: ./images/attrgraph.png used on input line 531.
-(pdftex.def)             Requested size: 469.75499pt x 241.52199pt.
+Package pdftex.def Info: ./images/attrgraph.png used on input line 528.
+(pdftex.def)             Requested size: 253.04987pt x 130.0983pt.
 
 <./images/dropdown.png, id=17, 345.29pt x 311.1625pt>
 File: ./images/dropdown.png Graphic file (type png)
 
 <use ./images/dropdown.png>
-Package pdftex.def Info: ./images/dropdown.png used on input line 538.
-(pdftex.def)             Requested size: 216.81pt x 195.38293pt.
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 550.
+Package pdftex.def Info: ./images/dropdown.png used on input line 535.
+(pdftex.def)             Requested size: 151.83145pt x 136.82646pt.
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 545.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlptm.fd
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 550.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 545.
 
+Underfull \vbox (badness 1688) has occurred while \output is active []
 
-LaTeX Warning: Reference `dropdownimage' on page 2 undefined on input line 550.
-
-
-[2] [3 <./images/taggraph3.png> <./images/Palette.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 560--561
+ [2 <./images/taggraph3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 555--556
 []\OT1/ptm/m/n/8 Qusay H. Mah-moud, Wlodek Do-bosiewicz, and David
  []
 
 
-Underfull \hbox (badness 5741) in paragraph at lines 560--561
+Underfull \hbox (badness 5741) in paragraph at lines 555--556
 \OT1/ptm/m/n/8 Swayne. 2004. Re-design-ing in-tro-duc-tory com-puter pro-gram-m
 ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 560--561
+Underfull \hbox (badness 10000) in paragraph at lines 555--556
 \OT1/ptm/m/n/8 with HTML, JavaScript, and Java. SIGCSE Bull. 36,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 560--561
+Underfull \hbox (badness 10000) in paragraph at lines 555--556
 \OT1/ptm/m/n/8 1 (March 2004), 120-124. DOI=10.1145/1028174.971344
  []
 
 
-Underfull \vbox (badness 1509) has occurred while \output is active []
-
- [4 <./images/attrgraph.png> <./images/dropdown.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 582--583
+Underfull \hbox (badness 10000) in paragraph at lines 577--578
 []\OT1/ptm/m/n/8 Webmonkey. HTML Cheat Sheet.//
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 584--585
+Underfull \hbox (badness 10000) in paragraph at lines 579--580
 []\OT1/ptm/m/n/8 A Sim-ple Guide to HTML. HTML Cheat Sheet.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 586--587
+Underfull \hbox (badness 10000) in paragraph at lines 581--582
 []\OT1/ptm/m/n/8 Usabilla. An HTML Cheat Sheet That Never Fails.
  []
 
 
-Overfull \hbox (39.47572pt too wide) in paragraph at lines 588--590
+Overfull \hbox (39.47572pt too wide) in paragraph at lines 583--585
 \OT1/ptm/m/n/8 http://www.exploringcs.org/wp-content/uploads/2014/02/ExploringC
 omputerScience-
  []
 
 
-Overfull \hbox (24.01123pt too wide) in paragraph at lines 594--595
+Overfull \hbox (24.01123pt too wide) in paragraph at lines 589--590
 []\OT1/ptm/m/n/8 Htmldog be-gin-ner tu-to-rial http://htmldog.com/guides/html/b
 eginner/conclusion/ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 608--610
+Underfull \hbox (badness 10000) in paragraph at lines 603--605
 \OT1/ptm/m/n/8 https://developers.whatwg.org/content-models.html#script-support
 ing-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 611--612
+Underfull \hbox (badness 10000) in paragraph at lines 606--607
 []\OT1/ptm/m/n/8 https://html.spec.whatwg.org/multipage/dom.html#transparent-co
 ntent-
  []
@@ -322,33 +311,30 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5
-
-] (./htmldroplet.aux)
+[3 <./images/Palette.png> <./images/attrgraph.png> <./images/dropdown.png>]
+(./htmldroplet.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 1916 strings out of 495032
- 29946 string characters out of 6181718
- 89241 words of memory out of 5000000
- 5144 multiletter control sequences out of 15000+600000
- 35192 words of font info for 64 fonts, out of 8000000 for 9000
+ 1933 strings out of 495032
+ 30147 string characters out of 6181718
+ 88253 words of memory out of 5000000
+ 5159 multiletter control sequences out of 15000+600000
+ 35707 words of font info for 66 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
- 27i,6n,21p,1106b,210s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,6n,21p,980b,208s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
-w/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on htmldroplet.pdf (5 pages, 478173 bytes).
+/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on htmldroplet.pdf (3 pages, 485250 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
+ 53 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
