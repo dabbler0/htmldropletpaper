@@ -421,11 +421,11 @@ This paper presents a block-programming editor for HTML code.  The editor provid
 \section{Introduction}
 Teaching HTML has long been an early step in a programming curriculum.  For example Budny, et al \cite{Budny} in Four Steps to Teaching C Programming, suggest "The layout of a web page allowed us to begin to teach the basic concepts of program layout... We are teaching web page design ... not for the purpose of teaching HTML, but to teach students the concept of writing code." Mahmoud, et al \cite{Mahmoud} suggest that starting with HTML is a way of teaching "programming for fun" and is a strategy for motivating students.
 
-Nonetheless, for first-time-coder, HTML can be difficult to learn.  In a workshop with English students, Mauriello, Pagnucci, and Winner \cite{Mauriello} observed "Students are generally not careful and experienced enough in their reading of the codes to find mistakes."  For non-coding students, Taylor and Gitsaki \cite{Taylor} suggest simplifying the problem by starting with a small set of about 30 HTML tags to create a basic web page.
+Nonetheless, for first-time-coder, HTML can be difficult to learn.  In a workshop with English students, Mauriello, Pagnucci, and Winner \cite{Mauriello} observed "Students are generally not careful and experienced enough in their reading of the codes to find mistakes."  HTML guides for non-coding students such as Taylor and Gitsaki \cite{Taylor} suggest simplifying the problem by starting with a small set of about 30 HTML tags to create a basic web page.
 
 Therefore we are interested in finding an alternative to WYSIWYG HTML tools that expose the code, while still simplifying the process of learning to use HTML tags for the first time.  In recent years, block programming languages such as Scratch \cite{Scratch} have introduced many students to coding through a visual representation of commands and control flow.  Here we investigate whether a similar approach can be effective when used with HTML code.
 
-Borrowing terminology from Nielsen's usability heuristics\cite{Nielsen}, we are interested in meeting three goals simultaneously:
+We aim to meet three goals simultaneously (borrowing terminology from Nielsen's usability heuristics\cite{Nielsen}):
 
 \begin{itemize}
 \item Allow students to create HTML using \emph{recognition rather than recall}, assembling blocks to make pages.
@@ -444,14 +444,14 @@ Borrowing terminology from Nielsen's usability heuristics\cite{Nielsen}, we are 
 \caption{Our HTML Block editor user experience}
 \small
 \begin{flushleft}
-Droplet is a dual mode editor giving preference to text. The modes can be switched any time.
+Users can switch between blocks and text freely.
 \end{flushleft}
 \label{dropletimage}
 \end{figure}
 
-We built our HTML editor as an extension of Droplet.  Droplet \cite{Droplet} is a dual-mode blocks and text editor that allows students to work with traditional text code syntax using either drag-and-drop blocks or by typing the text.  Students can switch modes at any time.
+We built our HTML editor as an extension of Droplet.  Droplet \cite{Droplet} is a dual-mode blocks and text editor framework that allows students to work with traditional text code syntax using either drag-and-drop blocks or by typing the text.  Students can switch modes at any time.
 
-Droplet's guiding philosophy is that the text, not the blocks, are the primary data. Thus, Droplet programs begin and end their life as text. When Droplet opens a file, the text is parsed into blocks, preserving the original text within block markup. Block editing operations performing splice operations on the text markup stream. At the end of the editing session, the markup is simply discarded and a raw text program is generated again. Figure \ref{lifecycle} shows a typical Droplet editing session in JavaScript and Figure \ref{dropletimage} shows a typical droplet user experience for our HTML editor.
+Droplet's guiding philosophy is that the text, not the blocks, are the primary data. Thus, Droplet programs begin and end their life as text. When Droplet opens a file, the text is parsed into blocks, preserving the original text within block markup. Block editing operations perform splice operations on the text markup stream. At the end of the editing session, the markup is simply discarded and a raw text program is generated again. Figure \ref{lifecycle} shows a typical Droplet editing for a JavaScript program, and Figure \ref{dropletimage} shows a typical droplet user experience for our HTML editor.
 
 \begin{figure}
 \centering
@@ -462,18 +462,19 @@ Droplet's guiding philosophy is that the text, not the blocks, are the primary d
 
 \subsection{Adding A New Language to Droplet}
 
-Droplet is designed to be extended to any text language by adding language adapters.
+Droplet is designed to be extended to any text language by creating a language adapter.
 
-A Droplet language adapter parses text to delinate blocks, and it also enforces rules that determine whether blocks are allowed to be dropped into specific sockets.  Typically the language parser relies on a standard language parser, inserting blocks based on positions of specific types of nodes in an AST.  Then the language adapter supports callbacks to determine drag-and-drop permissibility.
+A Droplet language adapter must parse text to delinate blocks, and it can also provide rules that determine whether blocks are allowed to be dropped into specific locations.  Typically the language parser relies on a standard language parser, inserting blocks based on positions of specific types of nodes in an AST.  Callback functions are used to determine drag-and-drop permissibility.
 
-New languages in Droplet also need a block palette.  The block palette in Droplet is a palette of choices: it is not a complete catalog of all possible blocks for a language, but a curated collection of useful document fragments.  Dropdown choices for sockets are similarly curated.  Users are always free to enter tags and attributes as free-form text, but a good palette design will allow common cases to be handled visually.
+New languages in Droplet also need a block palette.  The Droplet palette is a reflection of useful choices, not a complete catalog of all possible blocks for a language.  Similarly, dropdown choices for for sockets within blocks are similarly curated.  Users are always free to enter tags and attributes as free-form text, but a good palette design will allow tall he common cases to be handled with drag-and-drop.
 
 \section{Process}
 
 \subsection{Adapting A Parser}
+
 One of the goals of our HTML editor is to be able to visualize real-world webpages as blocks. This poses a difficulty because browsers are tolerant and many existing webpages are not stricltly standards-compliant, with mismatched tags, and missing, implicit, or redundant elements.
 
-Droplet's HTML mode adapts the parse5 \cite{parse5} HTML parser, which tolerates syntactically "incorrect" HTML code in the same way browsers do. We modified the parse5 parser for Droplet's purposes to add more detailed location data, so that precise text locations for tags and text can be extracted.
+Droplet's HTML mode adapts the parse5 HTML parser \cite{parse5}, which tolerates syntactically "incorrect" HTML code in the same way browsers do. We modified the parse5 parser for Droplet's purposes to add more detailed location data, so that precise source code locations for tags can be extracted.
 
 The block parsing process for HTML proceeds as the following psuedocode:
 \begin{enumerate}
@@ -493,15 +494,17 @@ The block parsing process for HTML proceeds as the following psuedocode:
 
 \subsection{Enforcing Droppability Rules}
 
-One major advantage of a block language is that it can enforce authoring so that students can create only standards-compliant code. Droplet's HTML mode therefore enforces droppability rules adapted from the WHATWG HTML specifications \cite{WHATWG}.  For example, a \texttt{<head>} element may only contain metadata elements such as \texttt{<title>} and \texttt{<meta>}, and a \texttt{<table>} element may only contain appropriate table elements such as \texttt{<tr>} and \texttt{<colgroup>} and \texttt{<caption>}.
+One major advantage of a block language is that it can guide authoring so that students create standards-compliant code. Droplet's HTML mode therefore enforces droppability rules adapted from the WHATWG HTML specifications \cite{WHATWG}.  For example, a \texttt{<head>} element may only contain metadata elements such as \texttt{<title>} and \texttt{<meta>}, and a \texttt{<table>} element may only contain appropriate table elements such as \texttt{<tr>} and \texttt{<colgroup>} and \texttt{<caption>}.
 
-We have implemented containment rules for 92 tags.  When a block is dragged into the document, only legal locations according to these rules are highlighted, and when a drop occurs, only those locations will receive a block.
+We have implemented standard the containment rules for 92 tags.  When a block is dragged into the document, only legal locations according to these rules are highlighted, and when a drop occurs, only those locations will receive a block.
 
 \subsection{Choosing A Palette}
 
-The palette in a block language is important to discovery and self-directed learning, because students can try new commands without having to read documentation. Having a palette that contains useful and rewarding tags in an HTML mode is therefore important. The WHATWG HTML specifications define over 100 tags, however, most of which are not used on a typical webpage. A number of developers online have informally posted HTML cheat sheets with the "most important tags," \cite{Webmonkey} \cite{SimpleGuide} \cite{Usabilla} but these are subjective and often conflict with each other. Because Droplet's philosophy is to be able to interact with real-world code on the Internet, we here determine and recommend a palette based on real-world tag frequencies.
+The palette in a block language is important to discovery and self-directed learning, because students can try new commands without having to read documentation. Having a palette that contains useful and rewarding tags in an HTML mode is therefore important.
 
-We are not aware of any published statistics on the real-world frequency of HTML tag usage on the web, so we crawled a selection of 52460 webpages using \cite{commoncrawl} and created real-world frequency data. We analyzed the data and plotted the top 108 tags in a graph. Figure \ref{Tagsgraph}.  (Full data from our crawl is available on github \cite{FullResults}.)  In figure \ref{Tagsgraph}, red bars represent a count of the number of times each tag was used per page on average in the crawled data set.  The blue line, on a logarithmic scale, represents the percentage of documents in the data set that used the tag.
+The WHATWG HTML specifications define over 100 tags. However, most them are not used on a typical webpage. A number of developers online have informally posted HTML cheat sheets with the "most important tags," \cite{Webmonkey} \cite{SimpleGuide} \cite{Usabilla} but these are subjective and often conflict with each other. Because Droplet's philosophy is to be able to interact with real-world code on the Internet, we here determine and recommend a palette based on real-world tag frequencies.
+
+We are not aware of any published statistics on the real-world frequency of HTML tag usage on the web, so we crawled a selection of 52460 webpages using commoncrawl.org \cite{commoncrawl} and created real-world frequency data. Our analysis of the top 108 tags is summarized in Figure \ref{Tagsgraph}.  (Full data from our crawl is available on github \cite{FullResults}.)  Red bars in that graph represent a count of the number of times each tag was used per page on average in the crawled data set.  The blue line, on a logarithmic scale, represents the percentage of documents in the data set that used the tag.  In addition, we analyzed the most common tag-attribute pairs.  These statistics are summarized in Figure \ref{attrgraph}.  Red bars on that graph represent the percentage of webpages that include a given attribute on a specific tag.
 
 \begin{figure}
 \centering
@@ -537,15 +540,20 @@ Right Scale (blue) - Percentage of pages containing the tag.
 \label{dropdownimage}
 \end{figure}
 
-We created the final palette, Figure \ref{paletteimage} by choosing the top 40 tags from the above 2 analysis results, adding a few elements to align with courses such as \cite{htmltutor1} \cite{htmltutor2} \cite{htmltutor3}, and removing some elements which have a similar behavior as another commonly-used alternative such as \texttt{<i>} versus \texttt{<em>}.
+We created the final palette (Figure \ref{paletteimage}) by choosing the top 40 tags from the above 2 analysis results, adding a few elements to align with courses such as \cite{htmltutor1} \cite{htmltutor2} \cite{htmltutor3}, and removing some elements which have a similar behavior as another commonly-used alternative such as \texttt{<i>} versus \texttt{<em>}.
 
-\section{Future Prospects}
+We also created dropdown lists for each element (Figure \ref{dropdownimage}) to allow stduents to choose between the most common attributes.  The student can choose an attribute and enter the attribute value as text, or just enter the entire attribute/value pair as text.
 
-\subsection{Palette with alternate blocks}
-As of now, the palette has some commonly used tags. This can be made better by including variations of tags based on commonly used attributes. An example can be inclusion of both, \textless script\textgreater \textless /script\textgreater block and \textless script src=`uri' \textgreater \textless/script\textgreater block. We did a detailed study of the commonly used attributes for every tag as can be found on GitHub \cite{FullResults}. The results lists down commonly used attribtutes for all the tags, again sampling randomly over real world HTML collected from commoncrawl \cite{commoncrawl}. 50 most widely used attributes for tags have been summarized in Figure \ref{attrgraph}. This data, as of now is used to put commonly used attributes in a dropdown. Figure \ref{dropdownimage}. We also have to ensure that the user cannot select the same attribute in multiple dropdowns in the same tag.
+\section{Future Work}
+
+\subsection{Buttons for adding and removing attributes}
+In HTML, every tag can accept a variable number of attributes, and the HTML mode would benefit from improved block editor support for variable argument lists.  We are building improvements to make it easy to use "add/remove" buttons on a block for adding new attributes.
+
+\subsection{Polymorphic elements}
+Some elements are use in several distinct ways, and we plan to do further analysis on common tag usage to decide on a few tags to represent in multiple ways on the palette.  For example, two ways of using \texttt{<a>} are with \texttt{href} or with \texttt{name}; two ways of using \texttt{<script>} are with \texttt{src} or with inline script.
 
 \subsection{Transparent content model}
-Some tags such as 'a', 'ins', 'del', 'map' are transparent elements. The content model of a transparent element is derived from the content model of its parent element. As of now the droppability implements FLOW\_CONTENT \cite{flowcontent} for transparent elements since WHATWG allows it as a fallback if there is no parent to inherit content model from \cite{whatwgtransparent}. It will be ideal to have a transparent content model.
+Some tags such as 'a', 'ins', 'del', 'map' are "transparent" elements, which means, according to the standard \cite{whatwgtransparent}, their content model is derived from the content model of its parent element. This type of contextual content model is not currently implemented but provided as "flow content" \cite{flowcontent}.  It will be ideal to have a transparent content model.
 
 \begin{thebibliography}{1}
 
@@ -574,9 +582,9 @@ Some tags such as 'a', 'ins', 'del', 'map' are transparent elements. The content
 \bibitem{pencilcodehtml}
   HTML Palette in use on Pencil Code. pencilcode.net/edit/example.html
 \bibitem{Webmonkey}
-  Webmonkey. HTML Cheat Sheet.// http://www.webmonkey.com/2010/02/html\_cheatsheet/
+  Webmonkey. HTML Cheat Sheet.\\ http://www.webmonkey.com/2010/02/html\_cheatsheet/
 \bibitem{SimpleGuide}
-  A Simple Guide to HTML. HTML Cheat Sheet. http://www.simplehtmlguide.com/cheatsheet.php
+  A Simple Guide to HTML. HTML Cheat Sheet.\\ http://www.simplehtmlguide.com/cheatsheet.php
 \bibitem{Usabilla}
   Usabilla. An HTML Cheat Sheet That Never Fails. http://blog.usabilla.com/an-html-cheat-sheet-that-never-fails/
 \bibitem{htmltutor1}
