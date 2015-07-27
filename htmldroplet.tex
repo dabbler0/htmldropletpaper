@@ -504,18 +504,12 @@ The palette in a block language is important to discovery and self-directed lear
 
 The WHATWG HTML specifications define over 100 tags. However, most them are not used on a typical webpage. A number of developers online have informally posted HTML cheat sheets with the "most important tags," \cite{Webmonkey} \cite{SimpleGuide} \cite{Usabilla} but these are subjective and often conflict with each other. Because Droplet's philosophy is to be able to interact with real-world code on the Internet, we here determine and recommend a palette based on real-world tag frequencies.
 
-We are not aware of any published statistics on the real-world frequency of HTML tag usage on the web, so we crawled a selection of 52460 webpages using commoncrawl.org \cite{commoncrawl} and created real-world frequency data. Our analysis of the top 108 tags is summarized in Figure \ref{Tagsgraph}.  (Full data from our crawl is available on github \cite{FullResults}.)  Red bars in that graph represent a count of the number of times each tag was used per page on average in the crawled data set.  The blue line, on a logarithmic scale, represents the percentage of documents in the data set that used the tag.  In addition, we analyzed the most common tag-attribute pairs.  These statistics are summarized in Figure \ref{attrgraph}.  Red bars on that graph represent the percentage of webpages that include a given attribute on a specific tag.
+We are not aware of any published statistics on the real-world frequency of HTML tag usage on the web, so we crawled a selection of 52460 webpages using Common Crawl \cite{commoncrawl} to create real-world frequency data. Our analysis of the top 108 tags is summarized in Figure \ref{Tagsgraph}.  (Full data from our crawl is available on github \cite{FullResults}.)  Red bars in that graph represent a count of the number of times each tag was used per page on average in the crawled data set.  The blue line, on a logarithmic scale, represents the percentage of documents in the data set that used the tag.  In addition, we analyzed the most common tag-attribute pairs.  These statistics are summarized in Figure \ref{attrgraph}.  Red bars on that graph represent the percentage of webpages that include a given attribute on a specific tag.
 
 \begin{figure}
 \centering
 \includegraphics[width=\columnwidth]{taggraph3.png}
 \caption{HTML Tag Usage on the Web}
-\small
-\begin{flushleft}
-A total of 52640 pages were sampled from commoncrawl \cite{commoncrawl}\\
-Left Scale (red) - Avg. count of tags per document.\\
-Right Scale (blue) - Percentage of pages containing the tag.
-\end{flushleft}
 \label{Tagsgraph}
 \end{figure}
 
@@ -535,7 +529,7 @@ Right Scale (blue) - Percentage of pages containing the tag.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.6\columnwidth]{dropdown.png}
+\includegraphics[width=0.5\columnwidth]{dropdown.png}
 \caption{Using commonly used attributes in a dropdown}
 \label{dropdownimage}
 \end{figure}
@@ -554,6 +548,10 @@ Some elements are used in several distinct ways, and we plan to do further analy
 
 \subsection{Transparent content model}
 Some tags such as 'a', 'ins', 'del', 'map' are "transparent" elements, which means, according to the standard \cite{whatwgtransparent}, their content model is derived from the content model of its parent element. This type of contextual content model is not currently implemented but provided as "flow content" \cite{flowcontent}.  We plan to add support for a transparent content model.
+
+\section*{Acknowledgement}
+
+We are grateful to Google Summer of Code, which supported Saksham Aggarwal's open-source work on this project.
 
 \begin{thebibliography}{1}
 
