@@ -436,7 +436,18 @@ Therefore we are interested in finding an alternative to WYSIWYG HTML tools that
 \label{lifecycle}
 \end{figure*}
 
-Droplet \cite{Droplet} is a dual-mode blocks and text editor that was built to bridge the gap between blocks and text. Droplet's primary guiding philosophy is that the text, not the blocks, are the primary data. Thus, Droplet programs begin and end their life as text. When Droplet opens a program file, the language adapter inserts markup indicating where blocks should go and how they should be rendered. The user interacts with this rendering of the program, performing splice operations on the markup stream. During editing, the language mode may be called back to preserve precedence or dictate droppability rules. At the end of the editing session, the markup is simply discarded and a raw text program is generated again. Figure \ref{lifecycle} shows a typical Droplet editing session in JavaScript.
+\begin{figure*}
+\centering
+\includegraphics[width=6in]{dualmode.png}
+\caption{Typical droplet interface for user}
+\small
+\begin{flushleft}
+Droplet is a dual mode editor giving preference to text. The modes can be switched any time.
+\end{flushleft}
+\label{dropletimage}
+\end{figure*}
+
+Droplet \cite{Droplet} is a dual-mode blocks and text editor that was built to bridge the gap between blocks and text. Droplet's primary guiding philosophy is that the text, not the blocks, are the primary data. Thus, Droplet programs begin and end their life as text. When Droplet opens a program file, the language adapter inserts markup indicating where blocks should go and how they should be rendered. The user interacts with this rendering of the program, performing splice operations on the markup stream. During editing, the language mode may be called back to preserve precedence or dictate droppability rules. At the end of the editing session, the markup is simply discarded and a raw text program is generated again. Figure \ref{lifecycle} shows a typical Droplet editing session in JavaScript and Figure \ref{dropletimage} shows the typical interface a droplet user experiences.
 
 \subsection{Adding A New Language to Droplet}
 
@@ -492,22 +503,7 @@ Right Scale (blue) - Percentage of pages containing the tag.
 \centering
 \includegraphics[width=6.5in]{attrgraph.png}
 \caption{Top attributes used with tags}
-\small
-\begin{flushleft}
-Number below a tag name is the number of tags studied.
-\end{flushleft}
 \label{attrgraph}
-\end{figure*}
-
-\begin{figure*}
-\centering
-\includegraphics[width=6in]{dualmode.png}
-\caption{Dual nature of Droplet}
-\small
-\begin{flushleft}
-Droplet is a dual mode editor giving preference to text. The modes can be switched any time.
-\end{flushleft}
-\label{dropletimage}
 \end{figure*}
 
 \begin{figure*}
@@ -524,7 +520,7 @@ We created he final palette \ref{paletteimage} whose full working version is pub
 \section{Future Prospects}
 
 \subsection{Palette with alternate blocks}
-As of now, the palette has some commonly used tags. This can be made better by including variations of tags based on commonly used attributes. An example can be inclusion of both, \textless script\textgreater \textless /script\textgreater block and \textless script src=`uri' \textgreater \textless/script\textgreater block. We did a detailed study of the commonly used attributes for every tag as can be found on GitHub \cite{FullResults}. The results lists down commonly used attribtutes for all the tags, again sampling randomly over real world HTML collected from commoncrawl \cite{commoncrawl}.
+As of now, the palette has some commonly used tags. This can be made better by including variations of tags based on commonly used attributes. An example can be inclusion of both, \textless script\textgreater \textless /script\textgreater block and \textless script src=`uri' \textgreater \textless/script\textgreater block. We did a detailed study of the commonly used attributes for every tag as can be found on GitHub \cite{FullResults}. The results lists down commonly used attribtutes for all the tags, again sampling randomly over real world HTML collected from commoncrawl \cite{commoncrawl}. 50 most widely used attributes for tags have been summarized in Figure \ref{attrgraph}
 
 \subsection{Transparent content model}
 Some tags such as 'a', 'ins', 'del', 'map' are transparent elements. The content model of a transparent element is derived from the content model of its parent element. As of now the droppability implements FLOW\_CONTENT \cite{flowcontent} for transparent elements since WHATWG allows it as a fallback if there is no parent to inherit content model from \cite{whatwgtransparent}. It will be ideal to have a transparent content model.
