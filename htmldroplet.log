@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.8)  27 JUL 2015 15:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.8)  27 JUL 2015 15:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -160,10 +160,6 @@ LaTeX Font Info:    ... okay on input line 333.
 \makeMPintoPDFobject=\count99
 \everyMPtoPDFconversion=\toks17
 )
-
-LaTeX Warning: Citation `Nielsen' on page 1 undefined on input line 428.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 428--429
 []\OT1/ptm/m/n/10 Borrowing ter-mi-nol-ogy from Nielsen's us-abil-ity
  []
@@ -312,27 +308,23 @@ Before submitting the final camera ready copy, remember to:
  process uses the appropriate paper size.
 
 [3 <./images/Palette.png> <./images/attrgraph.png> <./images/dropdown.png>]
-(./htmldroplet.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+(./htmldroplet.aux) ) 
 Here is how much of TeX's memory you used:
- 1933 strings out of 495032
- 30147 string characters out of 6181718
+ 1931 strings out of 495032
+ 30132 string characters out of 6181718
  88253 words of memory out of 5000000
- 5159 multiletter control sequences out of 15000+600000
- 35707 words of font info for 66 fonts, out of 8000000 for 9000
+ 5158 multiletter control sequences out of 15000+600000
+ 34600 words of font info for 65 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
  27i,6n,21p,980b,208s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi
-8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on htmldroplet.pdf (3 pages, 485250 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
+}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
+utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on htmldroplet.pdf (3 pages, 484840 bytes).
 PDF statistics:
  53 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
