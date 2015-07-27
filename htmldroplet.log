@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2015.4.21)  27 JUL 2015 15:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2015.4.21)  27 JUL 2015 17:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -205,131 +205,107 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-<./images/lifecycle.png, id=1, 620.3175pt x 262.9825pt>
-File: ./images/lifecycle.png Graphic file (type png)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 431.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 431.
 
-<use ./images/lifecycle.png>
-Package pdftex.def Info: ./images/lifecycle.png used on input line 434.
-(pdftex.def)             Requested size: 361.34999pt x 153.19205pt.
-
-<./images/dualmode.png, id=2, 1104.125pt x 431.6125pt>
+<./images/dualmode.png, id=1, 1104.125pt x 431.6125pt>
 File: ./images/dualmode.png Graphic file (type png)
 
 <use ./images/dualmode.png>
-Package pdftex.def Info: ./images/dualmode.png used on input line 441.
-(pdftex.def)             Requested size: 433.62pt x 169.50706pt.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 466.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 466.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 476.
+Package pdftex.def Info: ./images/dualmode.png used on input line 443.
+(pdftex.def)             Requested size: 253.04987pt x 98.91972pt.
 
- (/usr/share/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
+<./images/lifecycle.jpg, id=3, 621.32124pt x 336.25626pt>
+File: ./images/lifecycle.jpg Graphic file (type jpg)
+
+<use ./images/lifecycle.jpg>
+Package pdftex.def Info: ./images/lifecycle.jpg used on input line 458.
+(pdftex.def)             Requested size: 151.83145pt x 82.17056pt.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+ <./images/dualmode.png> <./images/lifecycle.jpg>]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 497.
+
+
+(/usr/share/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 476.
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
-
-]
-
-LaTeX Warning: Citation `Whoever' on page 2 undefined on input line 487.
-
-<./images/taggraph3.png, id=14, 1239.63126pt x 808.01875pt>
+<./images/taggraph3.png, id=15, 1239.63126pt x 808.01875pt>
 File: ./images/taggraph3.png Graphic file (type png)
 
 <use ./images/taggraph3.png>
-Package pdftex.def Info: ./images/taggraph3.png used on input line 491.
-(pdftex.def)             Requested size: 505.89pt x 329.74866pt.
+Package pdftex.def Info: ./images/taggraph3.png used on input line 511.
+(pdftex.def)             Requested size: 253.04987pt x 164.94214pt.
 
-<./images/Palette.png, id=15, 748.7975pt x 520.94624pt>
+<./images/Palette.png, id=16, 748.7975pt x 520.94624pt>
 File: ./images/Palette.png Graphic file (type png)
 
 <use ./images/Palette.png>
-Package pdftex.def Info: ./images/Palette.png used on input line 504.
-(pdftex.def)             Requested size: 361.34999pt x 251.39473pt.
+Package pdftex.def Info: ./images/Palette.png used on input line 518.
+(pdftex.def)             Requested size: 177.13412pt x 123.23317pt.
 
-<./images/attrgraph.png, id=16, 1136.245pt x 584.1825pt>
+<./images/attrgraph.png, id=17, 1136.245pt x 584.1825pt>
 File: ./images/attrgraph.png Graphic file (type png)
 
 <use ./images/attrgraph.png>
-Package pdftex.def Info: ./images/attrgraph.png used on input line 511.
-(pdftex.def)             Requested size: 469.75499pt x 241.52199pt.
+Package pdftex.def Info: ./images/attrgraph.png used on input line 525.
+(pdftex.def)             Requested size: 253.04987pt x 130.0983pt.
 
-<./images/dropdown.png, id=17, 345.29pt x 311.1625pt>
+<./images/dropdown.png, id=18, 345.29pt x 311.1625pt>
 File: ./images/dropdown.png Graphic file (type png)
 
 <use ./images/dropdown.png>
-Package pdftex.def Info: ./images/dropdown.png used on input line 518.
-(pdftex.def)             Requested size: 216.81pt x 195.38293pt.
- [2 <./images/lifecycle.png (PNG copy)> <./images/dualmode.png>] [3 <./images/t
-aggraph3.png> <./images/Palette.png>]
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 530.
-
-
-(/usr/share/texmf-dist/tex/latex/psnfss/omlptm.fd
-File: omlptm.fd 
-)
-LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 530.
- [4 <./images/attrgraph.png> <./images/dropdown.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 540--541
+Package pdftex.def Info: ./images/dropdown.png used on input line 532.
+(pdftex.def)             Requested size: 126.52493pt x 114.0173pt.
+ [2 <./images/taggraph3.png> <./images/Palette.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 561--562
 []\OT1/ptm/m/n/8 Qusay H. Mah-moud, Wlodek Do-bosiewicz, and David
  []
 
 
-Underfull \hbox (badness 5741) in paragraph at lines 540--541
+Underfull \hbox (badness 5741) in paragraph at lines 561--562
 \OT1/ptm/m/n/8 Swayne. 2004. Re-design-ing in-tro-duc-tory com-puter pro-gram-m
 ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--541
+Underfull \hbox (badness 10000) in paragraph at lines 561--562
 \OT1/ptm/m/n/8 with HTML, JavaScript, and Java. SIGCSE Bull. 36,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--541
+Underfull \hbox (badness 10000) in paragraph at lines 561--562
 \OT1/ptm/m/n/8 1 (March 2004), 120-124. DOI=10.1145/1028174.971344
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 560--561
-[]\OT1/ptm/m/n/8 Webmonkey. HTML Cheat Sheet.//
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 562--563
-[]\OT1/ptm/m/n/8 A Sim-ple Guide to HTML. HTML Cheat Sheet.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 564--565
+Underfull \hbox (badness 10000) in paragraph at lines 587--588
 []\OT1/ptm/m/n/8 Usabilla. An HTML Cheat Sheet That Never Fails.
  []
 
 
-Overfull \hbox (39.47572pt too wide) in paragraph at lines 566--568
+Overfull \hbox (39.47572pt too wide) in paragraph at lines 589--591
 \OT1/ptm/m/n/8 http://www.exploringcs.org/wp-content/uploads/2014/02/ExploringC
 omputerScience-
  []
 
 
-Overfull \hbox (24.01123pt too wide) in paragraph at lines 572--573
+Overfull \hbox (24.01123pt too wide) in paragraph at lines 595--596
 []\OT1/ptm/m/n/8 Htmldog be-gin-ner tu-to-rial http://htmldog.com/guides/html/b
 eginner/conclusion/ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 586--588
+Underfull \hbox (badness 10000) in paragraph at lines 609--611
 \OT1/ptm/m/n/8 https://developers.whatwg.org/content-models.html#script-support
 ing-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 589--590
+Underfull \hbox (badness 10000) in paragraph at lines 612--613
 []\OT1/ptm/m/n/8 https://html.spec.whatwg.org/multipage/dom.html#transparent-co
 ntent-
  []
@@ -345,31 +321,26 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5
-
-] (./htmldroplet.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[3 <./images/attrgraph.png> <./images/dropdown.png>] (./htmldroplet.aux) ) 
 Here is how much of TeX's memory you used:
- 2273 strings out of 493109
- 36043 string characters out of 6140856
- 102400 words of memory out of 5000000
- 5725 multiletter control sequences out of 15000+600000
- 35192 words of font info for 64 fonts, out of 8000000 for 9000
+ 2274 strings out of 493109
+ 35978 string characters out of 6140856
+ 100404 words of memory out of 5000000
+ 5727 multiletter control sequences out of 15000+600000
+ 34600 words of font info for 65 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 37i,6n,23p,1106b,217s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pf
-b></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-di
-st/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/time
-s/utmri8a.pfb>
-Output written on htmldroplet.pdf (5 pages, 397118 bytes).
+ 37i,6n,23p,874b,213s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr
+/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/
+ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
+texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1
+/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+
+Output written on htmldroplet.pdf (3 pages, 385024 bytes).
 PDF statistics:
- 57 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 51 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
