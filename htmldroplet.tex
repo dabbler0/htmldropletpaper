@@ -501,6 +501,13 @@ Right Scale (blue) - Percentage of pages containing the tag.
 
 \begin{figure*}
 \centering
+\includegraphics[width=5in]{Palette.png}
+\caption{The final Palette}
+\label{paletteimage}
+\end{figure*}
+
+\begin{figure*}
+\centering
 \includegraphics[width=6.5in]{attrgraph.png}
 \caption{Top attributes used with tags}
 \label{attrgraph}
@@ -508,9 +515,9 @@ Right Scale (blue) - Percentage of pages containing the tag.
 
 \begin{figure*}
 \centering
-\includegraphics[width=5in]{Palette.png}
-\caption{The final Palette}
-\label{paletteimage}
+\includegraphics[width=3in]{dropdown.png}
+\caption{Using commonly used attributes in a dropdown}
+\label{dropdownimage}
 \end{figure*}
 
 Figure \ref{Tagsgraph} shows our analysis of tag frequencies over random HTML datasets collected from commoncrawl \cite{commoncrawl} (data and full results are available on Github \cite{FullResults}.  Red bars represent a count of the number of times each tag was used per page on average in the crawled data sets. Blue line represents the percentage of documents in the data sets that used the tag.
@@ -520,7 +527,7 @@ We created he final palette \ref{paletteimage} whose full working version is pub
 \section{Future Prospects}
 
 \subsection{Palette with alternate blocks}
-As of now, the palette has some commonly used tags. This can be made better by including variations of tags based on commonly used attributes. An example can be inclusion of both, \textless script\textgreater \textless /script\textgreater block and \textless script src=`uri' \textgreater \textless/script\textgreater block. We did a detailed study of the commonly used attributes for every tag as can be found on GitHub \cite{FullResults}. The results lists down commonly used attribtutes for all the tags, again sampling randomly over real world HTML collected from commoncrawl \cite{commoncrawl}. 50 most widely used attributes for tags have been summarized in Figure \ref{attrgraph}
+As of now, the palette has some commonly used tags. This can be made better by including variations of tags based on commonly used attributes. An example can be inclusion of both, \textless script\textgreater \textless /script\textgreater block and \textless script src=`uri' \textgreater \textless/script\textgreater block. We did a detailed study of the commonly used attributes for every tag as can be found on GitHub \cite{FullResults}. The results lists down commonly used attribtutes for all the tags, again sampling randomly over real world HTML collected from commoncrawl \cite{commoncrawl}. 50 most widely used attributes for tags have been summarized in Figure \ref{attrgraph}. This data, as of now is used to put commonly used attributes in a dropdown. Figure \ref{dropdownimage}. We also have to ensure that the user cannot select the same attribute in multiple dropdowns in the same tag.
 
 \subsection{Transparent content model}
 Some tags such as 'a', 'ins', 'del', 'map' are transparent elements. The content model of a transparent element is derived from the content model of its parent element. As of now the droppability implements FLOW\_CONTENT \cite{flowcontent} for transparent elements since WHATWG allows it as a fallback if there is no parent to inherit content model from \cite{whatwgtransparent}. It will be ideal to have a transparent content model.
