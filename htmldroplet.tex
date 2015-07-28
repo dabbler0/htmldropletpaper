@@ -472,7 +472,7 @@ New languages in Droplet also need a block palette.  The Droplet palette is a re
 
 \subsection{Adapting A Parser}
 
-One of the goals of our HTML editor is to be able to visualize real-world webpages as blocks. This poses a difficulty because browsers are tolerant and many existing webpages are not stricltly standards-compliant, with mismatched tags, and missing, implicit, or redundant elements.
+One of the goals of our HTML editor is to be able to visualize real-world webpages as blocks. This poses a difficulty because browsers are tolerant and many existing webpages are not strictly standards-compliant, with mismatched tags, and missing, implicit, or redundant elements.
 
 Droplet's HTML mode adapts the parse5 HTML parser \cite{parse5}, which tolerates syntactically "incorrect" HTML code in the same way browsers do. We modified the parse5 parser for Droplet's purposes to add more detailed location data, so that precise source code locations for tags can be extracted.
 
