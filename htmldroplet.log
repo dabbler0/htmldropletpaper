@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2015.4.21)  27 JUL 2015 17:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2015.4.21)  27 JUL 2015 20:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -222,16 +222,20 @@ File: ./images/lifecycle.jpg Graphic file (type jpg)
 
 <use ./images/lifecycle.jpg>
 Package pdftex.def Info: ./images/lifecycle.jpg used on input line 458.
-(pdftex.def)             Requested size: 151.83145pt x 159.87758pt.
+(pdftex.def)             Requested size: 126.52493pt x 133.23244pt.
+
+Underfull \vbox (badness 1199) has occurred while \output is active []
+
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
- <./images/dualmode.png>]
+ <./images/dualmode.png> <./images/lifecycle.jpg>]
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 497.
 
  (/usr/share/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) <./images/taggraph3.png, id=15, 1239.63126pt x 808.01875pt>
+)
+<./images/taggraph3.png, id=15, 1239.63126pt x 808.01875pt>
 File: ./images/taggraph3.png Graphic file (type png)
 
 <use ./images/taggraph3.png>
@@ -258,7 +262,7 @@ File: ./images/dropdown.png Graphic file (type png)
 <use ./images/dropdown.png>
 Package pdftex.def Info: ./images/dropdown.png used on input line 532.
 (pdftex.def)             Requested size: 126.52493pt x 114.0173pt.
- [2 <./images/lifecycle.jpg> <./images/taggraph3.png>]
+ [2 <./images/taggraph3.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 561--562
 []\OT1/ptm/m/n/8 Qusay H. Mah-moud, Wlodek Do-bosiewicz, and David
  []
@@ -308,7 +312,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 612--613
 ntent-
  []
 
-[3 <./images/Palette.png> <./images/attrgraph.png> <./images/dropdown.png>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -320,27 +323,26 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4
-
-] (./htmldroplet.aux) ) 
+[3 <./images/Palette.png> <./images/attrgraph.png> <./images/dropdown.png>]
+(./htmldroplet.aux) ) 
 Here is how much of TeX's memory you used:
  2274 strings out of 493109
  35978 string characters out of 6140856
- 100404 words of memory out of 5000000
+ 101404 words of memory out of 5000000
  5727 multiletter control sequences out of 15000+600000
  34600 words of font info for 65 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  37i,6n,23p,874b,213s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr
-/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-d
-ist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/t
-imes/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/
-share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/
-type1/urw/times/utmri8a.pfb>
-Output written on htmldroplet.pdf (4 pages, 384448 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/s
+hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dis
+t/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/tim
+es/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/sh
+are/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/ty
+pe1/urw/times/utmri8a.pfb>
+Output written on htmldroplet.pdf (3 pages, 384202 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 51 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
