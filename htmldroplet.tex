@@ -329,7 +329,6 @@
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
 
-
 \begin{document}
 %
 % paper title
@@ -419,9 +418,9 @@ This paper presents a block-programming editor for HTML code.  The editor provid
 \IEEEpeerreviewmaketitle
 
 \section{Introduction}
-Teaching HTML has long been an early step in a programming curriculum.  For example Budny, et al \cite{Budny} in Four Steps to Teaching C Programming, suggest "The layout of a web page allowed us to begin to teach the basic concepts of program layout... We are teaching web page design ... not for the purpose of teaching HTML, but to teach students the concept of writing code." Mahmoud, et al \cite{Mahmoud} suggest that starting with HTML is a way of teaching "programming for fun" and is a strategy for motivating students.
+Teaching HTML has long been an early step in a programming curriculum.  For example Budny, et al \cite{Budny} in Four Steps to Teaching C Programming, suggest ``The layout of a web page allowed us to begin to teach the basic concepts of program layout... We are teaching web page design ... not for the purpose of teaching HTML, but to teach students the concept of writing code.'' Mahmoud, et al \cite{Mahmoud} suggest that starting with HTML is a way of teaching ``programming for fun'' and is a strategy for motivating students.
 
-Nonetheless, for first-time-coder, HTML can be difficult to learn.  In a workshop with English students, Mauriello, Pagnucci, and Winner \cite{Mauriello} observed "Students are generally not careful and experienced enough in their reading of the codes to find mistakes."  HTML guides for non-coding students such as Taylor and Gitsaki \cite{Taylor} suggest simplifying the problem by starting with a small set of about 30 HTML tags to create a basic web page.
+Nonetheless, for first-time-coder, HTML can be difficult to learn.  In a workshop with English students, Mauriello, Pagnucci, and Winner \cite{Mauriello} observed ``Students are generally not careful and experienced enough in their reading of the codes to find mistakes.''  HTML guides for non-coding students such as Taylor and Gitsaki \cite{Taylor} suggest simplifying the problem by starting with a small set of about 30 HTML tags to create a basic web page.
 
 Therefore we are interested in finding an alternative to WYSIWYG HTML tools that expose the code, while still simplifying the process of learning to use HTML tags for the first time.  In recent years, block programming languages such as Scratch \cite{Scratch} have introduced many students to coding through a visual representation of commands and control flow.  Here we investigate whether a similar approach can be used with HTML code.
 
@@ -466,7 +465,7 @@ Droplet is designed to be extended to any text language by creating a language a
 
 A Droplet language adapter must parse text to delinate blocks, and it can also provide rules that determine whether blocks are allowed to be dropped into specific locations.  Typically the language parser relies on a standard language parser, inserting blocks based on positions of specific types of nodes in an AST.  Callback functions are used to determine drag-and-drop permissibility.
 
-New languages in Droplet also need a block palette.  The Droplet palette is a reflection of useful choices, not a complete catalog of all possible blocks for a language.  Similarly, dropdown choices for for sockets within blocks are similarly curated.  Users are always free to enter tags and attributes as free-form text, but a good palette design will allow tall he common cases to be handled with drag-and-drop.
+New languages in Droplet also need a block palette.  The Droplet palette is a reflection of useful choices, not a complete catalog of all possible blocks for a language.  Similarly, dropdown choices for for sockets within blocks are curated suggestions.  Users are always free to enter tags and attributes as free-form text, but a good palette design will allow all he common cases to be handled with drag-and-drop.
 
 \section{Process}
 
@@ -474,7 +473,7 @@ New languages in Droplet also need a block palette.  The Droplet palette is a re
 
 One of the goals of our HTML editor is to be able to visualize real-world webpages as blocks. This poses a difficulty because browsers are tolerant and many existing webpages are not strictly standards-compliant, with mismatched tags, and missing, implicit, or redundant elements.
 
-Droplet's HTML mode adapts the parse5 HTML parser \cite{parse5}, which tolerates syntactically "incorrect" HTML code in the same way browsers do. We modified the parse5 parser for Droplet's purposes to add more detailed location data, so that precise source code locations for tags can be extracted.
+Droplet's HTML mode adapts the parse5 HTML parser \cite{parse5}, which tolerates syntactically ``incorrect'' HTML code in the same way browsers do. We modified the parse5 parser for Droplet's purposes to add more detailed location data, so that precise source code locations for tags can be extracted.
 
 The block parsing process for HTML proceeds as the following psuedocode:
 \begin{enumerate}
@@ -502,7 +501,7 @@ We have implemented standard the containment rules for 92 tags.  When a block is
 
 The palette in a block language is important to discovery and self-directed learning, because students can try new commands without having to read documentation. Having a palette that contains useful and rewarding tags in an HTML mode is therefore important.
 
-The WHATWG HTML specifications define over 100 tags. However, most them are not used on a typical webpage. A number of developers online have informally posted HTML cheat sheets with the "most important tags," \cite{Webmonkey} \cite{SimpleGuide} \cite{Usabilla} but these are subjective and often conflict with each other. Because Droplet's philosophy is to be able to interact with real-world code on the Internet, we here determine and recommend a palette based on real-world tag frequencies.
+The WHATWG HTML specifications define over 100 tags. However, most them are not used on a typical webpage. A number of developers online have informally posted HTML cheat sheets with the ``most important tags,'' \cite{Webmonkey} \cite{SimpleGuide} \cite{Usabilla} but these are subjective and often conflict with each other. Because Droplet's philosophy is to be able to interact with real-world code on the Internet, we here determine and recommend a palette based on real-world tag frequencies.
 
 We are not aware of any published statistics on the real-world frequency of HTML tag usage on the web, so we crawled a selection of 52460 webpages using Common Crawl \cite{commoncrawl} to create real-world frequency data. Our analysis of the top 108 tags is summarized in Figure \ref{Tagsgraph}.  (Full data from our crawl is available on github \cite{FullResults}.)  Red bars in that graph represent a count of the number of times each tag was used per page on average in the crawled data set.  The blue line, on a logarithmic scale, represents the percentage of documents in the data set that used the tag.  In addition, we analyzed the most common tag-attribute pairs.  These statistics are summarized in Figure \ref{attrgraph}.  Red bars on that graph represent the percentage of webpages that include a given attribute on a specific tag.
 
@@ -541,13 +540,13 @@ We also created dropdown lists for each element (Figure \ref{dropdownimage}) to 
 \section{Future Work}
 
 \subsection{Buttons for adding and removing attributes}
-In HTML, every tag can accept a variable number of attributes, and the HTML mode would benefit from improved block editor support for variable argument lists.  We are building improvements to make it easy to use "add/remove" buttons on a block for adding new attributes.
+In HTML, every tag can accept a variable number of attributes, and the HTML mode would benefit from improved block editor support for variable argument lists.  We are building improvements to make it easy to use ``add/remove'' buttons on a block for adding new attributes.
 
 \subsection{Polymorphic elements}
 Some elements are used in several distinct ways, and we plan to do further analysis on common tag usage to decide on a few tags to represent in multiple ways on the palette.  For example, two ways of using \texttt{<a>} are with \texttt{href} or with \texttt{name}; two ways of using \texttt{<script>} are with \texttt{src} or with inline script.
 
 \subsection{Transparent content model}
-Some tags such as 'a', 'ins', 'del', 'map' are "transparent" elements, which means, according to the standard \cite{whatwgtransparent}, their content model is derived from the content model of its parent element. This type of contextual content model is not currently implemented but provided as "flow content" \cite{flowcontent}.  We plan to add support for a transparent content model.
+Some tags such as `a', `ins', `del', `map' are ``transparent'' elements, which means, according to the standard \cite{whatwgtransparent}, their content model is derived from the content model of its parent element. This type of contextual content model is not currently implemented but provided as ``flow content'' \cite{flowcontent}.  We plan to add support for a transparent content model.
 
 \section*{Acknowledgement}
 
@@ -556,7 +555,7 @@ We are grateful to Google Summer of Code, which supported Saksham Aggarwal's ope
 \begin{thebibliography}{1}
 
 \bibitem{Budny}
-  Budny, D.; Lund, L.; Vipperman, J.; Patzer, J.L.I.I.I., "Four steps to teaching C programming," Frontiers in Education, 2002. FIE 2002. 32nd Annual , vol.2, no., pp.F1G-18,F1G-22 vol.2, 2002
+  Budny, D.; Lund, L.; Vipperman, J.; Patzer, J.L.I.I.I., ``Four steps to teaching C programming,'' Frontiers in Education, 2002. FIE 2002. 32nd Annual , vol.2, no., pp.F1G-18,F1G-22 vol.2, 2002
 \bibitem{Mahmoud}
   Qusay H. Mahmoud, Wlodek Dobosiewicz, and David Swayne. 2004. Redesigning introductory computer programming with HTML, JavaScript, and Java. SIGCSE Bull. 36, 1 (March 2004), 120-124. DOI=10.1145/1028174.971344 http://doi.acm.org/10.1145/1028174.971344
 \bibitem{Mauriello}

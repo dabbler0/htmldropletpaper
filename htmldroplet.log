@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  28 JUL 2015 08:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  28 JUL 2015 08:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -133,18 +133,18 @@ ings
 (./htmldroplet.aux)
 \openout1 = `htmldroplet.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 333.
-LaTeX Font Info:    ... okay on input line 333.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 333.
-LaTeX Font Info:    ... okay on input line 333.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 333.
-LaTeX Font Info:    ... okay on input line 333.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 333.
-LaTeX Font Info:    ... okay on input line 333.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 333.
-LaTeX Font Info:    ... okay on input line 333.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 333.
-LaTeX Font Info:    ... okay on input line 333.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 332.
+LaTeX Font Info:    ... okay on input line 332.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 332.
+LaTeX Font Info:    ... okay on input line 332.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 332.
+LaTeX Font Info:    ... okay on input line 332.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 332.
+LaTeX Font Info:    ... okay on input line 332.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 332.
+LaTeX Font Info:    ... okay on input line 332.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 332.
+LaTeX Font Info:    ... okay on input line 332.
 
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -207,22 +207,22 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 431.
+(Font)              <7> on input line 430.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 431.
+(Font)              <5> on input line 430.
 
 <./images/dualmode.png, id=1, 1104.125pt x 431.6125pt>
 File: ./images/dualmode.png Graphic file (type png)
 
 <use ./images/dualmode.png>
-Package pdftex.def Info: ./images/dualmode.png used on input line 443.
+Package pdftex.def Info: ./images/dualmode.png used on input line 442.
 (pdftex.def)             Requested size: 253.04987pt x 98.91972pt.
 
 <./images/lifecycle.jpg, id=3, 416.55624pt x 438.63875pt>
 File: ./images/lifecycle.jpg Graphic file (type jpg)
 
 <use ./images/lifecycle.jpg>
-Package pdftex.def Info: ./images/lifecycle.jpg used on input line 458.
+Package pdftex.def Info: ./images/lifecycle.jpg used on input line 457.
 (pdftex.def)             Requested size: 126.52493pt x 133.23244pt.
 
 Underfull \vbox (badness 3746) has occurred while \output is active []
@@ -231,7 +231,7 @@ Underfull \vbox (badness 3746) has occurred while \output is active []
 
 
  <./images/dualmode.png> <./images/lifecycle.jpg>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 497.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 496.
 
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1pcr.fd
@@ -241,75 +241,75 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 File: ./images/taggraph3.png Graphic file (type png)
 
 <use ./images/taggraph3.png>
-Package pdftex.def Info: ./images/taggraph3.png used on input line 511.
+Package pdftex.def Info: ./images/taggraph3.png used on input line 510.
 (pdftex.def)             Requested size: 253.04987pt x 164.94214pt.
 
 <./images/Palette.png, id=16, 748.7975pt x 520.94624pt>
 File: ./images/Palette.png Graphic file (type png)
 
 <use ./images/Palette.png>
-Package pdftex.def Info: ./images/Palette.png used on input line 518.
+Package pdftex.def Info: ./images/Palette.png used on input line 517.
 (pdftex.def)             Requested size: 177.13412pt x 123.23317pt.
 
 <./images/attrgraph.png, id=17, 1136.245pt x 584.1825pt>
 File: ./images/attrgraph.png Graphic file (type png)
 
 <use ./images/attrgraph.png>
-Package pdftex.def Info: ./images/attrgraph.png used on input line 525.
+Package pdftex.def Info: ./images/attrgraph.png used on input line 524.
 (pdftex.def)             Requested size: 253.04987pt x 130.0983pt.
 
 <./images/dropdown.png, id=18, 345.29pt x 311.1625pt>
 File: ./images/dropdown.png Graphic file (type png)
 
 <use ./images/dropdown.png>
-Package pdftex.def Info: ./images/dropdown.png used on input line 532.
+Package pdftex.def Info: ./images/dropdown.png used on input line 531.
 (pdftex.def)             Requested size: 126.52493pt x 114.0173pt.
  [2 <./images/taggraph3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 561--562
+Underfull \hbox (badness 10000) in paragraph at lines 560--561
 []\OT1/ptm/m/n/8 Qusay H. Mah-moud, Wlodek Do-bosiewicz, and David
  []
 
 
-Underfull \hbox (badness 5741) in paragraph at lines 561--562
+Underfull \hbox (badness 5741) in paragraph at lines 560--561
 \OT1/ptm/m/n/8 Swayne. 2004. Re-design-ing in-tro-duc-tory com-puter pro-gram-m
 ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 561--562
+Underfull \hbox (badness 10000) in paragraph at lines 560--561
 \OT1/ptm/m/n/8 with HTML, JavaScript, and Java. SIGCSE Bull. 36,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 561--562
+Underfull \hbox (badness 10000) in paragraph at lines 560--561
 \OT1/ptm/m/n/8 1 (March 2004), 120-124. DOI=10.1145/1028174.971344
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 587--588
+Underfull \hbox (badness 10000) in paragraph at lines 586--587
 []\OT1/ptm/m/n/8 Usabilla. An HTML Cheat Sheet That Never Fails.
  []
 
 
-Overfull \hbox (39.47572pt too wide) in paragraph at lines 589--591
+Overfull \hbox (39.47572pt too wide) in paragraph at lines 588--590
 \OT1/ptm/m/n/8 http://www.exploringcs.org/wp-content/uploads/2014/02/ExploringC
 omputerScience-
  []
 
 
-Overfull \hbox (24.01123pt too wide) in paragraph at lines 595--596
+Overfull \hbox (24.01123pt too wide) in paragraph at lines 594--595
 []\OT1/ptm/m/n/8 Htmldog be-gin-ner tu-to-rial http://htmldog.com/guides/html/b
 eginner/conclusion/ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 609--611
+Underfull \hbox (badness 10000) in paragraph at lines 608--610
 \OT1/ptm/m/n/8 https://developers.whatwg.org/content-models.html#script-support
 ing-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 612--613
+Underfull \hbox (badness 10000) in paragraph at lines 611--612
 []\OT1/ptm/m/n/8 https://html.spec.whatwg.org/multipage/dom.html#transparent-co
 ntent-
  []
@@ -342,7 +342,7 @@ sr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/t
 exlive/2014/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/20
 14/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on htmldroplet.pdf (3 pages, 384073 bytes).
+Output written on htmldroplet.pdf (3 pages, 384346 bytes).
 PDF statistics:
  51 PDF objects out of 1000 (max. 8388607)
  28 compressed objects within 1 object stream
